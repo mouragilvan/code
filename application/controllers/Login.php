@@ -23,6 +23,17 @@ class Login extends API_Controller {
          $this->_apiConfig([
              'methods' => ['POST'],
          ]);
+          
+         if( !empty($this->user->findByEmail(post('email') ) ) ){
+            return $this->api_return(
+                [
+                    'status' => false,
+                    "result" => [
+                        'message' => 'Já tem alguém usando este email',
+                    ],                
+                ],
+            200);      
+         } 
 
          $data = post();
 
@@ -82,7 +93,7 @@ class Login extends API_Controller {
         
         // API Configuration [Return Array: User Token Data]
         $user_data = $this->_apiConfig([
-            'methods' => ['POST'],
+            'methods' => ['POST','GET'],
             'requireAuthorization' => true,
         ]);
         // return data

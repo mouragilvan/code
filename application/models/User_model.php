@@ -12,6 +12,12 @@ class User_model extends CI_Model {
            return $query->result();
     }
 
+    public function findByEmail($email)
+    {
+        $this->db->where('email',$email);
+        return $this->db->get('user')->result();
+    }
+
     public function create($data)
     {   
                 

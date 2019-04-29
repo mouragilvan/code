@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Abr-2019 às 22:11
+-- Generation Time: 29-Abr-2019 às 03:23
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -91,14 +91,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
-(1, 'usuario', 'email@gmail.com', '123123'),
+(1, 'usuario', 'email@gmail.com', '$2a$08$J3nJjzl3uZNLyE/.ud3ha.asp3p5tb.uNeJlW0QGUfza.VmHqGL2W'),
 (2, 'USUARIO', 'email', '123'),
 (3, 'USUARIO 2', 'email', '123'),
 (4, 'USUARIO 2', 'email', '123'),
 (5, 'USUARIO 2', 'email', '123'),
 (6, 'user.teste', 'email', '$2a$08$geoSKYJIeli3Ya/sIQWK7uXiDGTN5iOVTmh8xYGjpNtjwfQIT7/xm'),
 (7, 'novo.teste', 'email', '$2a$08$xeT0Cvr61RE2.U76wI393.9zqhIXSi.gnIezMRmUF3j4PeffG7Quu'),
-(8, 'usuario.teste', 'email', '$2a$08$J3nJjzl3uZNLyE/.ud3ha.asp3p5tb.uNeJlW0QGUfza.VmHqGL2W');
+(8, 'usuario.teste', 'email', '$2a$08$J3nJjzl3uZNLyE/.ud3ha.asp3p5tb.uNeJlW0QGUfza.VmHqGL2W'),
+(9, 'gil', 'gil@gmail.com', '$2a$08$GP8viF4ILErVTK21Bv58KOH50AK0vgW6sqBt2fRWqv62.wiA.7Jt.');
 
 --
 -- Indexes for dumped tables
@@ -130,7 +131,7 @@ ALTER TABLE `api_limit`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
