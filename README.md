@@ -14,5 +14,8 @@ https://github.com/dwightwatson/codeigniter-bcrypt
 
 ## Substitua o localhost pela url do seu projeto;
 
-### POST: localhost/code/login/store
+### POST: localhost/code/login/register
 #### { "username":"example.name","email":"email@email.com","password":"123123"}
+
+### POST: localhost/code/auth/login
+#### {"email":"gil@gmail.com","password":"123"}
