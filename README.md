@@ -4,9 +4,10 @@
 CodeIgniter Versão 3.1.10
 
 # Bibliotecas
-
+## API
 https://github.com/ctechhindi/CodeIgniter-API-Controller
 
+## Criptografia
 https://github.com/dwightwatson/codeigniter-bcrypt
 
 
