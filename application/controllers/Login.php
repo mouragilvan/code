@@ -17,7 +17,7 @@ class Login extends API_Controller {
     }
     
 
-    public function store()
+    public function register()
     {
         // API Configuration
          $this->_apiConfig([

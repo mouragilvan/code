@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Abr-2019 às 03:23
+-- Generation Time: 30-Abr-2019 às 02:24
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -25,6 +25,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `api_keys`
+--
+
+CREATE TABLE `api_keys` (
+  `id` int(11) NOT NULL,
+  `api_key` varchar(50) NOT NULL,
+  `controller` varchar(50) NOT NULL,
+  `date_created` date DEFAULT NULL,
+  `date_modified` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `api_limit`
 --
 
@@ -37,41 +51,6 @@ CREATE TABLE `api_limit` (
   `ip_address` varchar(50) NOT NULL,
   `time` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `keys`
---
-
-CREATE TABLE `keys` (
-  `id` int(11) NOT NULL,
-  `key` varchar(40) NOT NULL,
-  `level` int(2) NOT NULL,
-  `ignore_limits` tinyint(1) NOT NULL DEFAULT '0',
-  `is_private_key` tinyint(1) NOT NULL DEFAULT '0',
-  `ip_addresses` text,
-  `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `logs`
---
-
-CREATE TABLE `logs` (
-  `id` int(11) NOT NULL,
-  `uri` varchar(255) NOT NULL,
-  `method` varchar(6) NOT NULL,
-  `params` text,
-  `api_key` varchar(40) NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `time` int(11) NOT NULL,
-  `rtime` float DEFAULT NULL,
-  `authorized` varchar(1) NOT NULL,
-  `response_code` smallint(3) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,6 +85,12 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
 --
 
 --
+-- Indexes for table `api_keys`
+--
+ALTER TABLE `api_keys`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `api_limit`
 --
 ALTER TABLE `api_limit`
@@ -122,6 +107,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `api_keys`
+--
+ALTER TABLE `api_keys`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `api_limit`
 --
 ALTER TABLE `api_limit`
@@ -131,7 +122,7 @@ ALTER TABLE `api_limit`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
