@@ -12,6 +12,7 @@ https://github.com/dwightwatson/codeigniter-bcrypt
 
 #Endpoints
 
-##Substitua o localhost pela url do seu projeto;
+## Substitua o localhost pela url do seu projeto;
 
-POST: localhost/code/login/store
+### POST: localhost/code/login/store
+####{ "username":"example.name","email":"email@email.com","password":"123123"}
